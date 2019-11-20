@@ -25,7 +25,7 @@ CREATE TABLE pessoa(
     CHECK(cpf LIKE '\d{11}'),
     CHECK(rg LIKE '\d{8}[\dXx]'),
     CHECK(telefone LIKE '\d{10,11}')
-);  
+); 
 
 CREATE TABLE time(
     sigla VARCHAR(5),
@@ -40,7 +40,7 @@ CREATE TABLE jogador(
     cpf VARCHAR(11),
     PRIMARY KEY(gamertag),
     UNIQUE(cpf),
-    FOREIGN KEY(cpf) REFERENCES pessoa(cpf) ON DELETE CASCADE
+    FOREIGN KEY(cpf) REFERENCES pessoa(cpf) ON DELETE CASCADE,
     FOREIGN KEY(time)   REFERENCES time(sigla) ON DELETE CASCADE
 );
 
@@ -57,7 +57,8 @@ CREATE TABLE jogo(
     nome VARCHAR(100),
     desenvolvedor VARCHAR(50),
     versao VARCHAR(10),
-    PRIMARY KEY(nome)
+    PRIMARY KEY(nome),
+    FOREIGN KEY(jogo)   REFERENCES jogo(nome) ON DELETE CASCADE
 );
 
 CREATE TABLE tipo_campeonato(

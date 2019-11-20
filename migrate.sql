@@ -48,7 +48,7 @@ CREATE TABLE patrocinador(
     patrocinador VARCHAR(50),
     jogador VARCHAR(50),
     quantia FLOAT,
-    PRIMARY KEY(nome, jogador),
+    PRIMARY KEY(patrocinador, jogador),
     FOREIGN KEY(jogador) REFERENCES jogador(gamertag) ON DELETE CASCADE,
     CHECK(quantia >= 0)
 );

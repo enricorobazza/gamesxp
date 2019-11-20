@@ -41,6 +41,7 @@ CREATE TABLE jogador(
     PRIMARY KEY(gamertag),
     UNIQUE(cpf),
     FOREIGN KEY(cpf) REFERENCES pessoa(cpf) ON DELETE CASCADE
+    FOREIGN KEY(time)   REFERENCES time(sigla) ON DELETE CASCADE
 );
 
 CREATE TABLE patrocinador(

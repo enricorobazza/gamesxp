@@ -67,7 +67,8 @@ CREATE TABLE tipo_campeonato(
     qtd_equipes INT,
     tipo_pontuacao VARCHAR(30),
     tamanho_equipes INT,
-    PRIMARY KEY(jogo, nome)
+    PRIMARY KEY(jogo, nome),
+    FOREIGN KEY(jogo)   REFERENCES jogo(nome) ON DELETE CASCADE
 );
 
 CREATE TABLE campeonato(

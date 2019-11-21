@@ -57,8 +57,7 @@ CREATE TABLE jogo(
     nome VARCHAR(100),
     desenvolvedor VARCHAR(50),
     versao VARCHAR(10),
-    PRIMARY KEY(nome),
-    FOREIGN KEY(jogo)   REFERENCES jogo(nome) ON DELETE CASCADE
+    PRIMARY KEY(nome)
 );
 
 CREATE TABLE tipo_campeonato(

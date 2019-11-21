@@ -120,8 +120,12 @@ INSERT INTO tipo_campeonato (jogo, nome, qtd_equipes, tipo_pontuacao, tamanho_eq
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA CAMPEONATO */
-INSERT INTO campeonato (id, jogo, tipo_campeonato, dt_inicio, dt_termino)
-	VALUES ('Counter Strike Global Offensive', 'Rounds', TO_DATE('2019/12/02', 'YYYY/MM/DD'), TO_DATE('2019/12/20', 'YYYY/MM/DD'));
+
+SELECT CURRVAL(pg_get_serial_sequence('campeonato','id'));
+
+INSERT INTO campeonato (jogo, tipo_campeonato, dt_inicio, dt_termino)
+	VALUES('Counter Strike Global Offensive', 'CS GO', '2019-11-27', '2019-12-23')
+	RETURNING id;
 
 
 
@@ -133,19 +137,18 @@ INSERT INTO campeonato (id, jogo, tipo_campeonato, dt_inicio, dt_termino)
 /* >>>>>>>ESSA TABELA NAO TEM NO MAPEAMENTO <<<< */
 
 INSERT INTO premiacao (id_campeonato, colocacao, premio)
-	VALUES ('100', '10', '1º colocado = 1000,00 - 2° colocado = 500,00 - 3º colocado = vaga para o proximo ano');
+	VALUES ('1', '10', '1º colocado = 1000,00 - 2° colocado = 500,00 - 3º colocado = vaga para o proximo ano');
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA EQUIPE */
-
-INSERT INTO equipe (id, time, id_campeonato)
-	VALUES ('paiN', '100');
-INSERT INTO equipe (id, time, id_campeonato)
-	VALUES ('FLA', '100'); 
-INSERT INTO equipe (id, time, id_campeonato)
-	VALUES ('CNB', '100');  
+INSERT INTO equipe ( time, id_campeonato)
+	VALUES ('paiN','1') RETURNING id;
+INSERT INTO equipe ( time, id_campeonato)
+	VALUES ('FLA','1')RETURNING id; 
+INSERT INTO equipe ( time, id_campeonato)
+	VALUES ('CNB','1')RETURNING id;  
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -153,9 +156,9 @@ INSERT INTO equipe (id, time, id_campeonato)
 /* DADOS PARA TABELA PATROCINIO EQUIPE */
 
 INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
-	VALUES ('Nestle', 'xxx', '10534,00');
+	VALUES ('Nestle', '1', '10534.00');
 INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
-	VALUES ('Google', 'xxx', '1534,00');
+	VALUES ('Google', '3', '1534.00');
 
 
 
@@ -166,54 +169,49 @@ INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
 
 /* DADOS PARA PARTIDA  */
 
-INSERT INTO partida (id, data, local, id_campeonato)
-	VALUES ('xxx', '2019-12-10 16:00:01', '100');
-INSERT INTO partida (id, data, local, id_campeonato)
-	VALUES ('xxx', '2019-12-10 10:00:01', '100');
-
+INSERT INTO partida ( data, local, id_campeonato)
+	VALUES ( '2019-12-10 16:00:01','bloco 10 sala 102', '1')RETURNING ID;
+INSERT INTO partida (data, local, id_campeonato)
+	VALUES ( '2019-12-10 10:00:01','bloco 3 sala 35', '1')RETURNING ID;
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA EQUIPE_JOGA */
 
 INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
-	VALUES ('xxx','xxx', '2');
+	VALUES ('1','3', '2');
 INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
-	VALUES ('xxx','xxx', '3');
+	VALUES ('2','4', '3');
 INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
-	VALUES ('xxx','xxx', '1');
+	VALUES ('3','3', '1');
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA juiz_arbitra */
 
 INSERT INTO juiz_arbitra (id_partida, juiz)
-	VALUES ('xxx','40056029861');
+	VALUES ('3','40056029861');
 INSERT INTO juiz_arbitra (id_partida, juiz)
-	VALUES ('xxx','50056029861');
+	VALUES ('4','50056029861');
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA ASSISTIR */
 
-INSERT INTO assistir ( id, email, id_partida)
-	VALUES ( 'xx','teste@gmail.com','xxx');
-INSERT INTO assistir ( id, email, id_partida)
-	VALUES ( 'xx','teste2@gmail.com','xxx');
-INSERT INTO assistir ( id, email, id_partida)
-	VALUES ( 'xx','teste3@gmail.com','xxx');
+INSERT INTO assistir (  email, id_partida)
+	VALUES ( 'teste@gmail.com','3') RETURNING id;
+INSERT INTO assistir (  email, id_partida)
+	VALUES ( 'teste2@gmail.com','3') RETURNING id;
+INSERT INTO assistir (  email, id_partida)
+	VALUES ( 'teste3@gmail.com','4') RETURNING id;
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA ASSISTIR */
-
-
-
-INSERT INTO campeonato (jogo, tipo_campeonato, dt_inicio, dt_termino)
-	VALUES('Counter Strike Global Offensive', 'CS GO', '2019-11-27', '2019-12-23')
-	RETURNING id;
-
-SELECT CURRVAL(pg_get_serial_sequence('campeonato','id'));
 
 INSERT INTO comentario ( id_assistir, horario, texto)
-	VALUES ('xxx', 'a definir', 'texto de exemplo do comentario')
+	VALUES ('2', '2019-12-10 10:00:01', 'texto de exemplo do comentario');
+
+
+------------------------------------------------
+

@@ -1,5 +1,5 @@
 import psycopg2
-import config
+from config import username, password
 
 class Connection:
     def __init__(self):

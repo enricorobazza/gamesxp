@@ -10,34 +10,34 @@
 /* DADOS PARA TABELA PESSOA */
 
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('40056029861', 'joao', '100002013', '33782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
+	VALUES ('40056029861', 'joao', '100002013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
 
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('50056029861', 'luiz', '151002013', '33782534', 'rua xv de novembro, nº356, são carlos - SP', TO_DATE('1994/11/02', 'YYYY/MM/DD'));
+	VALUES ('50056029861', 'luiz', '151002013', '1633782534', 'rua xv de novembro, nº356, são carlos - SP', TO_DATE('1994/11/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('60056029861', 'fernando', '122002013', '33782534', 'rua bruno lazarini, nº36, ibate- SP', TO_DATE('2000/10/02', 'YYYY/MM/DD'));
+	VALUES ('60056029861', 'fernando', '122002013', '1633782534', 'rua bruno lazarini, nº36, ibate- SP', TO_DATE('2000/10/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('70056029861', 'joao pedro', '191002013', '33782534', 'avenida paulista, nº100, são paulo - SP', TO_DATE('2000/05/02', 'YYYY/MM/DD'));
+	VALUES ('70056029861', 'joao pedro', '191002013', '1633782534', 'avenida paulista, nº100, são paulo - SP', TO_DATE('2000/05/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('80056029861', 'arnaldo', '255002013', '33782534', 'avenida getulio vargas, nº1560, frutal - MG', TO_DATE('1996/07/02', 'YYYY/MM/DD'));
+	VALUES ('80056029861', 'arnaldo', '255002013', '1633782534', 'avenida getulio vargas, nº1560, frutal - MG', TO_DATE('1996/07/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('90056029861', 'thiago', '270002013', '33782534', 'avenida são carlos, nº100, são carlos - sp', TO_DATE('1995/02/02', 'YYYY/MM/DD'));
+	VALUES ('90056029861', 'thiago', '270002013', '1633782534', 'avenida são carlos, nº100, são carlos - sp', TO_DATE('1995/02/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('10056029861', 'paulo', '352562013', '33782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1997/03/02', 'YYYY/MM/DD'));
+	VALUES ('10056029861', 'paulo', '352562013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1997/03/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('20056029861', 'jose', '207862013', '33782534', 'rua 7 de setembro, nº975, são carlos - SP', TO_DATE('1994/03/02', 'YYYY/MM/DD'));
+	VALUES ('20056029861', 'jose', '207862013', '1633782534', 'rua 7 de setembro, nº975, são carlos - SP', TO_DATE('1994/03/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('30056029861', 'carlos', '200352013', '33782534', 'avenida do estado, nº1500, araraquara - SP', TO_DATE('1999/11/02', 'YYYY/MM/DD'));
+	VALUES ('30056029861', 'carlos', '200352013', '1633782534', 'avenida do estado, nº1500, araraquara - SP', TO_DATE('1999/11/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('10556035061', 'pedro', '151352013', '33782534', 'rua savoie, nº10, são paulo - sp', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
+	VALUES ('10556035061', 'pedro', '151352013', '1633782534', 'rua savoie, nº10, são paulo - sp', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------

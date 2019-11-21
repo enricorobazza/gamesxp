@@ -33,10 +33,9 @@ CREATE TABLE pessoa(
     endereco TEXT,
     dt_nasc DATE,
     PRIMARY KEY(cpf),
-    CHECK(1 = 1)
-    -- CHECK(cpf LIKE '\d{11}'),
-    -- CHECK(rg LIKE '\d{8}[\dXx]'),
-    -- CHECK(telefone LIKE '\d{10,11}')
+    CHECK(cpf ~* '\d{11}'),
+    CHECK(rg ~* '\d{8}[\dXx]'),
+    CHECK(telefone ~* '\d{10,11}')
 ); 
 
 CREATE TABLE time(

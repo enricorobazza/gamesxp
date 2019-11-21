@@ -91,6 +91,7 @@ CREATE TABLE campeonato(
     PRIMARY KEY(id),
     UNIQUE(jogo, tipo_campeonato, dt_inicio),
     FOREIGN KEY(jogo, tipo_campeonato) REFERENCES tipo_campeonato(jogo, nome)
+    /* fazer um check do tipo date*/
 );
 
 CREATE TABLE premiacao(

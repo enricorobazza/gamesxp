@@ -98,6 +98,14 @@ CREATE TABLE equipe(
     FOREIGN KEY(id_campeonato) REFERENCES campeonato(id)
 );
 
+-- Verificar em aplicação se pertence ao time da equipe
+-- Verificar em aplicação se pertence a apenas uma equipe
+CREATE TABLE jogador_equipe(
+    id_equipe INT,
+    gamertag VARCHAR(50)
+    PRIMARY KEY(id_equipe, gamertag)
+);
+
 CREATE TABLE patrocinio_equipe(
     patrocinador VARCHAR(50),
     id_equipe INT,

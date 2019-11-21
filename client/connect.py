@@ -16,6 +16,9 @@ class Connection:
         self.cursor.execute(command)
         self.connection.commit()
 
+    def fetchone(self):
+        return self.cursor.fetchone()
+
     def listAllPlayers(self):
         self.cursor.execute("SELECT * from pessoa;")
         for pessoa in self.cursor.fetchall():

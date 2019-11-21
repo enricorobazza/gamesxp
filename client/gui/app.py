@@ -11,7 +11,7 @@ class Application:
 
 
 root = Tk()
-root.title("My app")
+root.title("Game XP")
 root.minsize(500,500)
 Application(root)
 root.mainloop()

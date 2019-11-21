@@ -3,18 +3,22 @@ from config import username, password
 
 class Connection:
     def __init__(self):
-        self.conn = psycopg2.connect("dbname=xgames user=%s password=%s"%(username, password))
-        self.cur = self.conn.cursor()
+        self.connection = psycopg2.connect("dbname=gamexp user=%s password=%s"%(username, password))
+        self.cursor = self.connection.cursor()
         print("Connection started")
 
     def __del__(self):
-        self.cur.close()
-        self.conn.close()
+        self.cursor.close()
+        self.connection.close()
         print("Connection finished")
 
+    def execute(self, command):
+        self.cursor.execute(command)
+        self.connection.commit()
+
     def listAllPlayers(self):
-        self.cur.execute("SELECT * from jogador;")
-        for jogador in self.cur.fetchall():
-            print(jogador[0])
+        self.cursor.execute("SELECT * from pessoa;")
+        for pessoa in self.cursor.fetchall():
+            print(pessoa[1])
 
 # conn = Connection()

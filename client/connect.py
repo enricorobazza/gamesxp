@@ -1,8 +1,9 @@
 import psycopg2
+import config
 
 class Connection:
     def __init__(self):
-        self.conn = psycopg2.connect("dbname=xgames user=enricorobazza")
+        self.conn = psycopg2.connect("dbname=xgames user=%s password=%s"%(username, password))
         self.cur = self.conn.cursor()
         print("Connection started")
 

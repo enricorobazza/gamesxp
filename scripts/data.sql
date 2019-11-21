@@ -1,43 +1,34 @@
-/* >>>>>>>>TEMOS QUE DAR UMA ATENÇAO PARA ALGUMAS COISAS :
-
-- COMO SERA O FORMATO CPF E RG, SE TERA . OU -
-- NO CASO DO ATRIBUTO DO TIPO SERIAL, VER COM GERAR ELE, PARA USAR NA POPULAÇÃO SEGUINTE.. EM AGUNS CASOS COLOQUEI 'XXX'
-- VER COMO PEGAR O HORARIO LOCAL NO CASO DO COMENTARIO
-
-
-*/
-
 /* DADOS PARA TABELA PESSOA */
 
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('40056029861', 'joao', '100002013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
+	VALUES ('40056029861', 'João', '100002013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
 
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('50056029861', 'luiz', '151002013', '1633782534', 'rua xv de novembro, nº356, são carlos - SP', TO_DATE('1994/11/02', 'YYYY/MM/DD'));
+	VALUES ('50056029861', 'Luiz', '151002013', '1633782534', 'rua xv de novembro, nº356, são carlos - SP', TO_DATE('1994/11/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('60056029861', 'fernando', '122002013', '1633782534', 'rua bruno lazarini, nº36, ibate- SP', TO_DATE('2000/10/02', 'YYYY/MM/DD'));
+	VALUES ('60056029861', 'Fernando', '122002013', '1633782534', 'rua bruno lazarini, nº36, ibate- SP', TO_DATE('2000/10/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('70056029861', 'joao pedro', '191002013', '1633782534', 'avenida paulista, nº100, são paulo - SP', TO_DATE('2000/05/02', 'YYYY/MM/DD'));
+	VALUES ('70056029861', 'João Pedro', '191002013', '1633782534', 'avenida paulista, nº100, são paulo - SP', TO_DATE('2000/05/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('80056029861', 'arnaldo', '255002013', '1633782534', 'avenida getulio vargas, nº1560, frutal - MG', TO_DATE('1996/07/02', 'YYYY/MM/DD'));
+	VALUES ('80056029861', 'Arnaldo', '255002013', '1633782534', 'avenida getulio vargas, nº1560, frutal - MG', TO_DATE('1996/07/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('90056029861', 'thiago', '270002013', '1633782534', 'avenida são carlos, nº100, são carlos - sp', TO_DATE('1995/02/02', 'YYYY/MM/DD'));
+	VALUES ('90056029861', 'Thiago', '270002013', '1633782534', 'avenida são carlos, nº100, são carlos - sp', TO_DATE('1995/02/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('10056029861', 'paulo', '352562013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1997/03/02', 'YYYY/MM/DD'));
+	VALUES ('10056029861', 'Paulo', '352562013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1997/03/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('20056029861', 'jose', '207862013', '1633782534', 'rua 7 de setembro, nº975, são carlos - SP', TO_DATE('1994/03/02', 'YYYY/MM/DD'));
+	VALUES ('20056029861', 'José', '207862013', '1633782534', 'rua 7 de setembro, nº975, são carlos - SP', TO_DATE('1994/03/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('30056029861', 'carlos', '200352013', '1633782534', 'avenida do estado, nº1500, araraquara - SP', TO_DATE('1999/11/02', 'YYYY/MM/DD'));
+	VALUES ('30056029861', 'Carlos', '200352013', '1633782534', 'avenida do estado, nº1500, araraquara - SP', TO_DATE('1999/11/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('10556035061', 'pedro', '151352013', '1633782534', 'rua savoie, nº10, são paulo - sp', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
+	VALUES ('10556035061', 'Pedro', '151352013', '1633782534', 'rua savoie, nº10, são paulo - sp', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -45,7 +36,7 @@ INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 /* DADOS PARA TABELA TIME */
 
 INSERT INTO TIME (sigla, nome, fundador) 
-	VALUES ('paiN', 'painN Gaming', 'joao da silva');
+	VALUES ('paiN', 'painN Gaming', 'João da Silva');
 INSERT INTO TIME (sigla, nome, fundador) 
 	VALUES ('CNB', 'CNB eSports Club', 'Matheus Vidal');
 INSERT INTO TIME (sigla, nome, fundador) 
@@ -57,7 +48,7 @@ INSERT INTO TIME (sigla, nome, fundador)
 INSERT INTO TIME (sigla, nome, fundador) 
 	VALUES ('RED', 'RED Canids', 'Fernando');
 INSERT INTO TIME (sigla, nome, fundador) 
-	VALUES ('FLA', 'Flamengo eSports', 'zico');
+	VALUES ('FLA', 'Flamengo eSports', 'Zico');
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -111,107 +102,87 @@ INSERT INTO jogo (nome, desenvolvedor, versao)
 /* DADOS PARA TABELA TIPO_CAMPEONATO */
 
 INSERT INTO tipo_campeonato (jogo, nome, qtd_equipes, tipo_pontuacao, tamanho_equipes)
-	VALUES('Counter Strike Global Offensive', 'CS GO', '10', 'Rounds', '5');
+	VALUES('Counter Strike Global Offensive', 'CS GO', 10, 'Rounds', 5);
 INSERT INTO tipo_campeonato (jogo, nome, qtd_equipes, tipo_pontuacao, tamanho_equipes)
-	VALUES('Fortnite', 'Fortnite', '25', 'Mata Mata', '4');
+	VALUES('Fortnite', 'Fortnite', 25, 'Mata Mata', 4);
 INSERT INTO tipo_campeonato (jogo, nome, qtd_equipes, tipo_pontuacao, tamanho_equipes)
-	VALUES('League of Legends', 'LOL', '15', 'Tabela de Pontos', '5');
+	VALUES('League of Legends', 'LOL', 15, 'Tabela de Pontos', 5);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA CAMPEONATO */
 
-SELECT CURRVAL(pg_get_serial_sequence('campeonato','id'));
-
 INSERT INTO campeonato (jogo, tipo_campeonato, dt_inicio, dt_termino)
-	VALUES('Counter Strike Global Offensive', 'CS GO', '2019-11-27', '2019-12-23')
-	RETURNING id;
-
-
-
+	VALUES('Counter Strike Global Offensive', 'CS GO', TO_DATE('27/11/2019', 'DD/MM/YYYY'), TO_DATE('23/12/2019', 'DD/MM/YYYY'));
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA PREMIACAO */ 
 
-/* >>>>>>>ESSA TABELA NAO TEM NO MAPEAMENTO <<<< */
+INSERT INTO premiacao (id_campeonato, colocacao, premio)
+	VALUES (1, 1, '1000');
 
 INSERT INTO premiacao (id_campeonato, colocacao, premio)
-	VALUES ('1', '10', '1º colocado = 1000,00 - 2° colocado = 500,00 - 3º colocado = vaga para o proximo ano');
+	VALUES (1, 2, '500');
 
+INSERT INTO premiacao (id_campeonato, colocacao, premio)
+	VALUES (1, 3, 'Vaga para o próximo ano.');
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA EQUIPE */
-INSERT INTO equipe ( time, id_campeonato)
-	VALUES ('paiN','1') RETURNING id;
-INSERT INTO equipe ( time, id_campeonato)
-	VALUES ('FLA','1')RETURNING id; 
-INSERT INTO equipe ( time, id_campeonato)
-	VALUES ('CNB','1')RETURNING id;  
 
+INSERT INTO equipe (time, id_campeonato) VALUES ('paiN', 1);
+INSERT INTO equipe (time, id_campeonato) VALUES ('FLA', 1); 
+INSERT INTO equipe (time, id_campeonato) VALUES ('CNB', 1);  
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA PATROCINIO EQUIPE */
 
 INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
-	VALUES ('Nestle', '1', '10534.00');
+	VALUES ('Nestle', 1, 10534);
 INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
-	VALUES ('Google', '3', '1534.00');
-
-
-
-
-
+	VALUES ('Google', 3, 1534);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA PARTIDA  */
 
-INSERT INTO partida ( data, local, id_campeonato)
-	VALUES ( '2019-12-10 16:00:01','bloco 10 sala 102', '1')RETURNING ID;
 INSERT INTO partida (data, local, id_campeonato)
-	VALUES ( '2019-12-10 10:00:01','bloco 3 sala 35', '1')RETURNING ID;
+	VALUES ('2019-12-10 16:00:01', 'bloco 10 sala 102', 1) ;
+INSERT INTO partida (data, local, id_campeonato)
+	VALUES ('2019-12-10 10:00:01','bloco 3 sala 35', 1) ;
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA EQUIPE_JOGA */
 
-INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
-	VALUES ('1','3', '2');
-INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
-	VALUES ('2','4', '3');
-INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
-	VALUES ('3','3', '1');
+INSERT INTO equipe_joga (id_equipe, id_partida, colocacao) VALUES (1, 1, 2);
+INSERT INTO equipe_joga (id_equipe, id_partida, colocacao) VALUES (2, 2, 3);
+INSERT INTO equipe_joga (id_equipe, id_partida, colocacao) VALUES (3, 1, 1);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA juiz_arbitra */
 
-INSERT INTO juiz_arbitra (id_partida, juiz)
-	VALUES ('3','40056029861');
-INSERT INTO juiz_arbitra (id_partida, juiz)
-	VALUES ('4','50056029861');
-
+INSERT INTO juiz_arbitra (id_partida, juiz) VALUES (1,'40056029861');
+INSERT INTO juiz_arbitra (id_partida, juiz) VALUES (2,'50056029861');
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA ASSISTIR */
 
-INSERT INTO assistir (  email, id_partida)
-	VALUES ( 'teste@gmail.com','3') RETURNING id;
-INSERT INTO assistir (  email, id_partida)
-	VALUES ( 'teste2@gmail.com','3') RETURNING id;
-INSERT INTO assistir (  email, id_partida)
-	VALUES ( 'teste3@gmail.com','4') RETURNING id;
+INSERT INTO assistir (email, id_partida) VALUES ('teste@gmail.com', 1);
+INSERT INTO assistir (email, id_partida) VALUES ('teste2@gmail.com', 1);
+INSERT INTO assistir (email, id_partida) VALUES ('teste3@gmail.com', 2);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-/* DADOS PARA TABELA ASSISTIR */
+/* DADOS PARA TABELA COMENTARIO */
 
-INSERT INTO comentario ( id_assistir, horario, texto)
-	VALUES ('2', '2019-12-10 10:00:01', 'texto de exemplo do comentario');
+INSERT INTO comentario (id_assistir, horario, texto) VALUES ('2', NOW(), 'texto de exemplo do comentario');
 
+INSERT INTO comentario (id_assistir, horario, texto) VALUES ('1', NOW(), 'comentario 2');
 
 ------------------------------------------------
 

@@ -1,19 +1,4 @@
--- DROP TABLE IF EXISTS pessoa;
--- DROP TABLE IF EXISTS time;
--- DROP TABLE IF EXISTS jogador;
--- DROP TABLE IF EXISTS patrocinador;
--- DROP TABLE IF EXISTS jogo;
--- DROP TABLE IF EXISTS tipo_campeonato;
--- DROP TABLE IF EXISTS campeonato;
--- DROP TABLE IF EXISTS premiacao;
--- DROP TABLE IF EXISTS equipe;
--- DROP TABLE IF EXISTS patrocinio_equipe;
--- DROP TABLE IF EXISTS partida;
--- DROP TABLE IF EXISTS equipe_joga;
--- DROP TABLE IF EXISTS juiz_arbitra;
--- DROP TABLE IF EXISTS assistir;
--- DROP TABLE IF EXISTS comentario;
-
+-- Desconectar todas as conexões atuais com o DB 
 SELECT
    pg_terminate_backend (pg_stat_activity.pid)
 FROM
@@ -21,12 +6,14 @@ FROM
 WHERE
    pg_stat_activity.datname = 'gamexp';
 
+-- Drop database, create and connect
 DROP DATABASE IF EXISTS gamexp;
 CREATE DATABASE gamexp;
 \c gamexp
 
+-- Tables
 CREATE TABLE pessoa(
-    cpf VARCHAR(11), -- talvez mudar para int?
+    cpf VARCHAR(11),
     nome VARCHAR(100),
     rg VARCHAR(9),
     telefone VARCHAR(11),
@@ -89,8 +76,8 @@ CREATE TABLE campeonato(
     dt_termino TIMESTAMP,
     PRIMARY KEY(id),
     UNIQUE(jogo, tipo_campeonato, dt_inicio),
-    FOREIGN KEY(jogo, tipo_campeonato) REFERENCES tipo_campeonato(jogo, nome)
-    /* fazer um check do tipo date*/
+    FOREIGN KEY(jogo, tipo_campeonato) REFERENCES tipo_campeonato(jogo, nome),
+    CHECK(dt_termino > dt_inicio)
 );
 
 CREATE TABLE premiacao(
@@ -120,7 +107,6 @@ CREATE TABLE patrocinio_equipe(
     CHECK(quantia >= 0)
 );
 
--- Foi criado id pra partida, pra facilitar
 CREATE TABLE partida(
     id SERIAL,
     data TIMESTAMP,

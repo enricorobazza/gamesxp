@@ -65,34 +65,34 @@ INSERT INTO TIME (sigla, nome, fundador)
 
 
 INSERT INTO jogador (gamertag, time, cpf)
-    VALUES ('Yang"', 'paiN', '400.560.298-61');
+    VALUES ('Yang', 'paiN', '40056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('FREIRE', 'CNB', '500.560.298-61');
+    VALUES ('FREIRE', 'CNB', '50056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('TAY', 'INTZ', '600.560.298-61');
+    VALUES ('TAY', 'INTZ', '60056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('WIZER', 'KBM', '700.560.298-61');
+    VALUES ('WIZER', 'KBM', '70056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('LEP', 'Keyd', '800.560.298-61');
+    VALUES ('LEP', 'Keyd', '80056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('LOOP', 'RED', '900.560.298-61');
+    VALUES ('LOOP', 'RED', '90056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('ROBO', 'FLA', '100.560.298-61');
+    VALUES ('ROBO', 'FLA', '10056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('ASLAN', 'CNB', '200.560.298-61');
+    VALUES ('ASLAN', 'CNB', '20056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('MINERVA', 'paiN', '300.560.298-61');
+    VALUES ('MINERVA', 'paiN', '30056029861');
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA PATROCINADOR */
 
 INSERT INTO patrocinador (patrocinador, jogador, quantia)
-	VALUES ('Nestle', 'Yang', '10.165,00');
+	VALUES ('Nestle', 'Yang', '10165.00');
 INSERT INTO patrocinador (patrocinador, jogador, quantia)
-	VALUES ('Google', 'ROBO', '15.165,00');
+	VALUES ('Google', 'ROBO', '15165.00');
 INSERT INTO patrocinador (patrocinador, jogador, quantia)
-	VALUES ('Kabum', 'WIZER', '1.165,00');
+	VALUES ('Kabum', 'WIZER', '1165.00');
 	
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -100,11 +100,11 @@ INSERT INTO patrocinador (patrocinador, jogador, quantia)
 /* DADOS PARA TABELA JOGO */
 
 INSERT INTO jogo (nome, desenvolvedor, versao)
-	VALUES ('League of Legends', 'RIOT Games', '9.22')
+	VALUES ('League of Legends', 'RIOT Games', '9.22');
 INSERT INTO jogo (nome, desenvolvedor, versao)
-	VALUES ('Counter Strike Global Offensive', 'Valve', '2.0')
+	VALUES ('Counter Strike Global Offensive', 'Valve', '2.0');
 INSERT INTO jogo (nome, desenvolvedor, versao)
-	VALUES ('Fortnite', 'Epic Games', '3.4')
+	VALUES ('Fortnite', 'Epic Games', '3.4');
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -1,3 +1,12 @@
+/* >>>>>>>>TEMOS QUE DAR UMA ATENÇAO PARA ALGUMAS COISAS :
+
+- COMO SERA O FORMATO CPF E RG, SE TERA . OU -
+- NO CASO DO ATRIBUTO DO TIPO SERIAL, VER COM GERAR ELE, PARA USAR NA POPULAÇÃO SEGUINTE.. EM AGUNS CASOS COLOQUEI 'XXX'
+- VER COMO PEGAR O HORARIO LOCAL NO CASO DO COMENTARIO
+
+
+*/
+
 /* DADOS PARA TABELA PESSOA */
 
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
@@ -111,4 +120,92 @@ INSERT INTO tipo_campeonato ( jogo, nome, qtd_equipes, tipo_pontuacao, tamanho_e
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA CAMPEONATO */
+INSERT INTO campeonato (id, jogo, tipo_campeonato, dt_inicio, dt_termino)
+	VALUES ('Counter Strike Global Offensive', 'Rounds', TO_DATE('2019/12/02', 'YYYY/MM/DD'), TO_DATE('2019/12/20', 'YYYY/MM/DD'));
 
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA TABELA PREMIACAO */ 
+
+/* >>>>>>>ESSA TABELA NAO TEM NO MAPEAMENTO <<<< */
+
+INSERT INTO premiacao (id_campeonato, colocacao, premio)
+	VALUES ('100', '10', '1º colocado = 1000,00 - 2° colocado = 500,00 - 3º colocado = vaga para o proximo ano');
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA TABELA EQUIPE */
+
+INSERT INTO equipe (id, time, id_campeonato)
+	VALUES ('paiN', '100');
+INSERT INTO equipe (id, time, id_campeonato)
+	VALUES ('FLA', '100'); 
+INSERT INTO equipe (id, time, id_campeonato)
+	VALUES ('CNB', '100');  
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA TABELA PATROCINIO EQUIPE */
+
+INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
+	VALUES ('Nestle', 'xxx', '10534,00');
+INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
+	VALUES ('Google', 'xxx', '1534,00');
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA PARTIDA  */
+
+INSERT INTO partida (id, data, local, id_campeonato)
+	VALUES ('xxx', '2019-12-10 16:00:01', '100');
+INSERT INTO partida (id, data, local, id_campeonato)
+	VALUES ('xxx', '2019-12-10 10:00:01', '100');
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA TABELA EQUIPE_JOGA */
+
+INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
+	VALUES ('xxx','xxx', '2');
+INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
+	VALUES ('xxx','xxx', '3');
+INSERT INTO equipe_joga (id_equipe, id_partida, colocacao)
+	VALUES ('xxx','xxx', '1');
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA TABELA juiz_arbitra */
+
+INSERT INTO juiz_arbitra (id_partida, juiz)
+	VALUES ('xxx','40056029861');
+INSERT INTO juiz_arbitra (id_partida, juiz)
+	VALUES ('xxx','50056029861');
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA TABELA ASSISTIR */
+
+INSERT INTO assistir ( id, email, id_partida)
+	VALUES ( 'xx','teste@gmail.com','xxx');
+INSERT INTO assistir ( id, email, id_partida)
+	VALUES ( 'xx','teste2@gmail.com','xxx');
+INSERT INTO assistir ( id, email, id_partida)
+	VALUES ( 'xx','teste3@gmail.com','xxx');
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+/* DADOS PARA TABELA ASSISTIR */
+
+INSERT INTO comentario ( id_assistir, horario, texto)
+	VALUES ('xxx', 'a definir', 'texto de exemplo do comentario')

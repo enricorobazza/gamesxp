@@ -19,11 +19,11 @@ SELECT
 FROM
    pg_stat_activity
 WHERE
-   pg_stat_activity.datname = 'target_database';
+   pg_stat_activity.datname = 'gamexp';
 
-DROP DATABASE IF EXISTS xgames;
-CREATE DATABASE xgames;
-\c xgames
+DROP DATABASE IF EXISTS gamexp;
+CREATE DATABASE gamexp;
+\c gamexp
 
 CREATE TABLE pessoa(
     cpf VARCHAR(11), -- talvez mudar para int?

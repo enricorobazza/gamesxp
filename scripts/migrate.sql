@@ -102,7 +102,7 @@ CREATE TABLE equipe(
 -- Verificar em aplicação se pertence a apenas uma equipe
 CREATE TABLE jogador_equipe(
     id_equipe INT,
-    gamertag VARCHAR(50)
+    gamertag VARCHAR(50),
     PRIMARY KEY(id_equipe, gamertag)
 );
 

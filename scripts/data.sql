@@ -138,6 +138,12 @@ INSERT INTO equipe (time, id_campeonato) VALUES ('CNB', 1);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
+/* DADOS PARA TABELA JOGADOR EQUIPE */
+
+-- INSERIR AQUI
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
 /* DADOS PARA TABELA PATROCINIO EQUIPE */
 
 INSERT INTO patrocinio_equipe (patrocinador, id_equipe, quantia)
@@ -153,6 +159,7 @@ INSERT INTO partida (data, local, id_campeonato)
 	VALUES ('2019-12-10 16:00:01', 'bloco 10 sala 102', 1) ;
 INSERT INTO partida (data, local, id_campeonato)
 	VALUES ('2019-12-10 10:00:01','bloco 3 sala 35', 1) ;
+
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA EQUIPE_JOGA */

@@ -1,18 +1,29 @@
-DROP TABLE IF EXISTS pessoa;
-DROP TABLE IF EXISTS time;
-DROP TABLE IF EXISTS jogador;
-DROP TABLE IF EXISTS patrocinador;
-DROP TABLE IF EXISTS jogo;
-DROP TABLE IF EXISTS tipo_campeonato;
-DROP TABLE IF EXISTS campeonato;
-DROP TABLE IF EXISTS premiacao;
-DROP TABLE IF EXISTS equipe;
-DROP TABLE IF EXISTS patrocinio_equipe;
-DROP TABLE IF EXISTS partida;
-DROP TABLE IF EXISTS equipe_joga;
-DROP TABLE IF EXISTS juiz_arbitra;
-DROP TABLE IF EXISTS assistir;
-DROP TABLE IF EXISTS comentario;
+-- DROP TABLE IF EXISTS pessoa;
+-- DROP TABLE IF EXISTS time;
+-- DROP TABLE IF EXISTS jogador;
+-- DROP TABLE IF EXISTS patrocinador;
+-- DROP TABLE IF EXISTS jogo;
+-- DROP TABLE IF EXISTS tipo_campeonato;
+-- DROP TABLE IF EXISTS campeonato;
+-- DROP TABLE IF EXISTS premiacao;
+-- DROP TABLE IF EXISTS equipe;
+-- DROP TABLE IF EXISTS patrocinio_equipe;
+-- DROP TABLE IF EXISTS partida;
+-- DROP TABLE IF EXISTS equipe_joga;
+-- DROP TABLE IF EXISTS juiz_arbitra;
+-- DROP TABLE IF EXISTS assistir;
+-- DROP TABLE IF EXISTS comentario;
+
+SELECT
+   pg_terminate_backend (pg_stat_activity.pid)
+FROM
+   pg_stat_activity
+WHERE
+   pg_stat_activity.datname = 'target_database';
+
+DROP DATABASE IF EXISTS xgames;
+CREATE DATABASE xgames;
+\c xgames
 
 CREATE TABLE pessoa(
     cpf VARCHAR(11), -- talvez mudar para int?
@@ -22,9 +33,10 @@ CREATE TABLE pessoa(
     endereco TEXT,
     dt_nasc DATE,
     PRIMARY KEY(cpf),
-    CHECK(cpf LIKE '\d{11}'),
-    CHECK(rg LIKE '\d{8}[\dXx]'),
-    CHECK(telefone LIKE '\d{10,11}')
+    CHECK(1 = 1)
+    -- CHECK(cpf LIKE '\d{11}'),
+    -- CHECK(rg LIKE '\d{8}[\dXx]'),
+    -- CHECK(telefone LIKE '\d{10,11}')
 ); 
 
 CREATE TABLE time(
@@ -57,8 +69,7 @@ CREATE TABLE jogo(
     nome VARCHAR(100),
     desenvolvedor VARCHAR(50),
     versao VARCHAR(10),
-    PRIMARY KEY(nome),
-    FOREIGN KEY(jogo)   REFERENCES jogo(nome) ON DELETE CASCADE
+    PRIMARY KEY(nome)
 );
 
 CREATE TABLE tipo_campeonato(
@@ -68,7 +79,7 @@ CREATE TABLE tipo_campeonato(
     tipo_pontuacao VARCHAR(30),
     tamanho_equipes INT,
     PRIMARY KEY(jogo, nome),
-    FOREIGN KEY(jogo)   REFERENCES jogo(nome) ON DELETE CASCADE
+    FOREIGN KEY(jogo) REFERENCES jogo(nome) ON DELETE CASCADE
 );
 
 CREATE TABLE campeonato(

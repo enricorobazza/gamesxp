@@ -1,13 +1,13 @@
 /* DADOS PARA TABELA PESSOA */
 
-#jUIZES
+-- Juízes
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('40056029861', 'João', '100002013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
 
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('50056029861', 'Luiz', '151002013', '1633782534', 'rua xv de novembro, nº356, são carlos - SP', TO_DATE('1994/11/02', 'YYYY/MM/DD'));
 
-#jOGADORES
+-- Jogadores
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('60056029861', 'Fernando', '122002013', '1633782534', 'rua bruno lazarini, nº36, ibate- SP', TO_DATE('2000/10/02', 'YYYY/MM/DD'));
 	
@@ -73,7 +73,7 @@ INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('82640026428', 'Augusto', '207862013', '1633782534', 'rua henrique bredda, nº9705, são carlos - SP', TO_DATE('1996/04/22', 'YYYY/MM/DD'));
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('4482006523', 'Marcelo', '200352013', '1633782534', 'avenida dos deuses, nº15, araraquara - SP', TO_DATE('2001/10/12', 'YYYY/MM/DD'));
+	VALUES ('44820065231', 'Marcelo', '200352013', '1633782534', 'avenida dos deuses, nº15, araraquara - SP', TO_DATE('2001/10/12', 'YYYY/MM/DD'));
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA TIME */
@@ -145,7 +145,7 @@ INSERT INTO JOGADOR (gamertag, time, cpf)
 INSERT INTO JOGADOR (gamertag, time, cpf)
     VALUES ('NINJAX', 'FLA', '82640026428');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('SALAMASTER', 'FLA', '4482006523');
+    VALUES ('SALAMASTER', 'FLA', '44820065231');
 
 
 
@@ -209,69 +209,69 @@ INSERT INTO premiacao (id_campeonato, colocacao, premio)
 
 /* DADOS PARA TABELA EQUIPE */
 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('paiN1', 'paiN', 1);
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('paiN2', 'paiN', 2);
+INSERT INTO equipe (time, id_campeonato) VALUES ('paiN', 1);
+INSERT INTO equipe (time, id_campeonato) VALUES ('paiN', 2);
 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('CNB1', 'CNB', 1);
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('CNB2', 'CNB', 2);  
+INSERT INTO equipe (time, id_campeonato) VALUES ('CNB', 1);
+INSERT INTO equipe (time, id_campeonato) VALUES ('CNB', 2);  
 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('INTZ1', 'INTZ', 1); 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('INTZ2', 'INTZ', 2);
+INSERT INTO equipe (time, id_campeonato) VALUES ('INTZ', 1); 
+INSERT INTO equipe (time, id_campeonato) VALUES ('INTZ', 2);
 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('KBM1', 'KBM', 1);
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('KBM2', 'KBM', 2);  
+INSERT INTO equipe (time, id_campeonato) VALUES ('KBM', 1);
+INSERT INTO equipe (time, id_campeonato) VALUES ('KBM', 2);  
 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('Keyd1', 'Keyd', 1);  
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('Keyd2', 'Keyd', 2);
+INSERT INTO equipe (time, id_campeonato) VALUES ('Keyd', 1);  
+INSERT INTO equipe (time, id_campeonato) VALUES ('Keyd', 2);
 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('RED1', 'RED', 1);
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('RED2', 'RED', 2);
+INSERT INTO equipe (time, id_campeonato) VALUES ('RED', 1);
+INSERT INTO equipe (time, id_campeonato) VALUES ('RED', 2);
 
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('FLA1', 'FLA', 1);
-INSERT INTO equipe (id, time, id_campeonato) VALUES ('FLA2', 'FLA', 2); 
+INSERT INTO equipe (time, id_campeonato) VALUES ('FLA', 1);
+INSERT INTO equipe (time, id_campeonato) VALUES ('FLA', 2); 
  
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA JOGADOR EQUIPE */
 
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN1', 'Yang');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN1', 'MINERVA');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN2', 'TIGER');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN2', 'Yang');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (1, 'Yang');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (1, 'MINERVA');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (2, 'TIGER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (2, 'Yang');
 
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB1', 'FREIRE');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB1', 'CROKK');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB2', 'ASLAN');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB2', 'FREIRE');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB2', 'CROKK');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (3, 'FREIRE');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (3, 'CROKK');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (4, 'ASLAN');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (4, 'FREIRE');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (4, 'CROKK');
 
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('INTZ2', 'TAY');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('INTZ2', 'RAZ');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('INTZ2', 'SLAYER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (5, 'TAY');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (5, 'RAZ');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (5, 'SLAYER');
 
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM1', 'WIZER');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM2', 'OWSLA');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM2', 'YURIK');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM2', 'WIZER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (6, 'WIZER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (7, 'OWSLA');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (7, 'YURIK');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (7, 'WIZER');
 
 
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd1', 'LEP');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd1', 'NAWKIN');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd2', 'DRDOOM');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd2', 'LEP');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd2', 'NAWKIN');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (8, 'LEP');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (8, 'NAWKIN');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (9, 'DRDOOM');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (9, 'LEP');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (9, 'NAWKIN');
 
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('RED1', 'LOOP');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('RED1', 'SPEEDY');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('RED1', 'KRAZY');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (10, 'LOOP');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (10, 'SPEEDY');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (10, 'KRAZY');
 
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA1', 'ROBO');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA1', 'NINJAX');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA1', 'SALAMASTER');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA2', 'ROBO');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA2', 'NINJAX');
-INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA2', 'SALAMASTER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (11, 'ROBO');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (11, 'NINJAX');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (11, 'SALAMASTER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (12, 'ROBO');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (12, 'NINJAX');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES (12, 'SALAMASTER');
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA PATROCINIO EQUIPE */

@@ -16,6 +16,11 @@ class Connection:
         self.cursor.execute(command)
         self.connection.commit()
 
+    def insertID(self, command):
+        self.cursor.execute(command)
+        self.connection.commit()
+        return self.cursor.fetchone()[0]
+
     def fetchone(self):
         return self.cursor.fetchone()
 
@@ -24,4 +29,6 @@ class Connection:
         for pessoa in self.cursor.fetchall():
             print(pessoa[1])
 
-# conn = Connection()
+    def testReturn(self):
+        self.cursor.execute("INSERT INTO equipe(time, id_campeonato) VALUES('KBM',1) RETURNING id")
+        print(self.cursor.fetchone()[0])

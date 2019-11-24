@@ -1,11 +1,13 @@
 /* DADOS PARA TABELA PESSOA */
 
+#jUIZES
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('40056029861', 'João', '100002013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
 
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('50056029861', 'Luiz', '151002013', '1633782534', 'rua xv de novembro, nº356, são carlos - SP', TO_DATE('1994/11/02', 'YYYY/MM/DD'));
-	
+
+#jOGADORES
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('60056029861', 'Fernando', '122002013', '1633782534', 'rua bruno lazarini, nº36, ibate- SP', TO_DATE('2000/10/02', 'YYYY/MM/DD'));
 	
@@ -13,24 +15,65 @@ INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
 	VALUES ('70056029861', 'João Pedro', '191002013', '1633782534', 'avenida paulista, nº100, são paulo - SP', TO_DATE('2000/05/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('80056029861', 'Arnaldo', '255002013', '1633782534', 'avenida getulio vargas, nº1560, frutal - MG', TO_DATE('1996/07/02', 'YYYY/MM/DD'));
+	VALUES ('80056029861', 'Arnaldo', '255002013', '1633782534', 'avenida getulio vargas, nº1560, frutal - MG', TO_DATE('1997/11/23', 'YYYY/MM/DD'));
+
+	
+
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('29047289458', 'Gabriel', '964018926', '1633782534', 'rua paganini, nº34, ibate- SP', TO_DATE('2001/10/02', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('90056029861', 'Thiago', '270002013', '1633782534', 'avenida são carlos, nº100, são carlos - sp', TO_DATE('1995/02/02', 'YYYY/MM/DD'));
+	VALUES ('68246029836', 'Mateus', '708216276', '1633782534', 'avenida jk, nº100, são paulo - SP', TO_DATE('2002/02/13', 'YYYY/MM/DD'));
 	
 INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('10056029861', 'Paulo', '352562013', '1633782534', 'avenida são carlos, nº100, são carlos - SP', TO_DATE('1997/03/02', 'YYYY/MM/DD'));
-	
-INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('20056029861', 'José', '207862013', '1633782534', 'rua 7 de setembro, nº975, são carlos - SP', TO_DATE('1994/03/02', 'YYYY/MM/DD'));
-	
-INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('30056029861', 'Carlos', '200352013', '1633782534', 'avenida do estado, nº1500, araraquara - SP', TO_DATE('1999/11/02', 'YYYY/MM/DD'));
-	
-INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
-	VALUES ('10556035061', 'Pedro', '151352013', '1633782534', 'rua savoie, nº10, são paulo - sp', TO_DATE('1995/09/02', 'YYYY/MM/DD'));
+	VALUES ('78352029833', 'Andre', '360612340', '1633782534', 'avenida getulio vargas, nº156, frutal - MG', TO_DATE('1996/07/27', 'YYYY/MM/DD'));
 
 
+
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('90056029861', 'Thiago', '446048470', '1633782534', 'avenida são carlos, nº100, são paulo - sp', TO_DATE('1997/05/28', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('10556035061', 'Fernanda', '232050319', '1633782534', 'rua bela vista, nº10, são paulo - sp', TO_DATE('1996/10/25', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('97056029861', 'Felipe', '988062741', '1633782534', 'rua iguatemi, nº100, são paulo - sp', TO_DATE('2001/08/25', 'YYYY/MM/DD'));
+	
+
+
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('74890029861', 'Paulo', '795679307', '1633782534', 'avenida são carlense, nº13, são carlos - SP', TO_DATE('1993/11/02', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('65748323498', 'José', '521296426', '1633782534', 'rua 7 de setembro, nº95, são carlos - SP', TO_DATE('1993/04/07', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('23456789861', 'Carlos', '411797504', '1633782534', 'avenida petroni, nº150, são carlos - SP', TO_DATE('1999/12/24', 'YYYY/MM/DD'));
+	
+
+
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('63146729762', 'Sabrina', '231173886', '1633782534', 'rua parana, nº36, são carlos- SP', TO_DATE('2001/11/01', 'YYYY/MM/DD'));
+	
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('20394857610', 'Giovana', '191002013', '1633782534', 'avenida carlinhos, nº100, são paulo - SP', TO_DATE('2000/04/18', 'YYYY/MM/DD'));
+	
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('01928471284', 'Ana', '845828199', '1633782534', 'avenida getulio vargas, nº1560, frutal - MG', TO_DATE('1998/07/06', 'YYYY/MM/DD'));
+
+
+
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('78326029853', 'Gabriela', '270002013', '1633782534', 'avenida são jose, nº100, são carlos - sp', TO_DATE('1999/12/03', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('12984650972', 'Samuel', '151352013', '1633782534', 'rua samambaia da locura, nº10, são paulo - sp', TO_DATE('1999/11/30', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('19283748123', 'Marcos', '230318110', '1633782534', 'avenida salamandra da alvorada, nº69, são paulo - sp', TO_DATE('2001/08/14', 'YYYY/MM/DD'));
+	
+
+
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('11298836036', 'Bruno', '352562013', '1633782534', 'avenida santo pai amado, nº10, são carlos - SP', TO_DATE('1995/06/07', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('82640026428', 'Augusto', '207862013', '1633782534', 'rua henrique bredda, nº9705, são carlos - SP', TO_DATE('1996/04/22', 'YYYY/MM/DD'));
+INSERT INTO pessoa (cpf, nome, rg, telefone, endereco, dt_nasc)
+	VALUES ('4482006523', 'Marcelo', '200352013', '1633782534', 'avenida dos deuses, nº15, araraquara - SP', TO_DATE('2001/10/12', 'YYYY/MM/DD'));
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA TIME */
@@ -55,24 +98,56 @@ INSERT INTO TIME (sigla, nome, fundador)
 /* DADOS PARA TABELA JOGADOR */
 
 
-INSERT INTO jogador (gamertag, time, cpf)
-    VALUES ('Yang', 'paiN', '40056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('FREIRE', 'CNB', '50056029861');
+    VALUES ('Yang', 'paiN', '60056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('TAY', 'INTZ', '60056029861');
+    VALUES ('MINERVA', 'paiN', '70056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('WIZER', 'KBM', '70056029861');
+    VALUES ('TIGER', 'paiN', '80056029861');
+
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('LEP', 'Keyd', '80056029861');
+    VALUES ('FREIRE', 'CNB', '29047289458');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('LOOP', 'RED', '90056029861');
+    VALUES ('CROKK', 'CNB', '68246029836');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('ROBO', 'FLA', '10056029861');
+    VALUES ('ASLAN', 'CNB', '78352029833');
+
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('ASLAN', 'CNB', '20056029861');
+    VALUES ('TAY', 'INTZ', '90056029861');
 INSERT INTO JOGADOR (gamertag, time, cpf)
-    VALUES ('MINERVA', 'paiN', '30056029861');
+    VALUES ('RAZ', 'INTZ', '10556035061');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('SLAYER', 'INTZ', '97056029861');
+
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('WIZER', 'KBM', '74890029861');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('OWSLA', 'KBM', '65748323498');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('YURIK', 'KBM', '23456789861');
+
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('LEP', 'Keyd', '63146729762');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('NAWKIN', 'Keyd', '20394857610');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('DRDOOM', 'Keyd', '01928471284');
+
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('LOOP', 'RED', '78326029853');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('SPEEDY', 'RED', '12984650972');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('KRAZY', 'RED', '19283748123');
+
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('ROBO', 'FLA', '11298836036');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('NINJAX', 'FLA', '82640026428');
+INSERT INTO JOGADOR (gamertag, time, cpf)
+    VALUES ('SALAMASTER', 'FLA', '4482006523');
+
+
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -114,6 +189,8 @@ INSERT INTO tipo_campeonato (jogo, nome, qtd_equipes, tipo_pontuacao, tamanho_eq
 
 INSERT INTO campeonato (jogo, tipo_campeonato, dt_inicio, dt_termino)
 	VALUES('Counter Strike Global Offensive', 'CS GO', TO_DATE('27/11/2019', 'DD/MM/YYYY'), TO_DATE('23/12/2019', 'DD/MM/YYYY'));
+INSERT INTO campeonato (jogo, tipo_campeonato, dt_inicio, dt_termino)
+	VALUES('Fortnite', 'Fortnite', TO_DATE('27/11/2019', 'DD/MM/YYYY'), TO_DATE('23/12/2019', 'DD/MM/YYYY'));
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -132,16 +209,69 @@ INSERT INTO premiacao (id_campeonato, colocacao, premio)
 
 /* DADOS PARA TABELA EQUIPE */
 
-INSERT INTO equipe (time, id_campeonato) VALUES ('paiN', 1);
-INSERT INTO equipe (time, id_campeonato) VALUES ('FLA', 1); 
-INSERT INTO equipe (time, id_campeonato) VALUES ('CNB', 1);  
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('paiN1', 'paiN', 1);
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('paiN2', 'paiN', 2);
+
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('CNB1', 'CNB', 1);
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('CNB2', 'CNB', 2);  
+
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('INTZ1', 'INTZ', 1); 
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('INTZ2', 'INTZ', 2);
+
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('KBM1', 'KBM', 1);
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('KBM2', 'KBM', 2);  
+
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('Keyd1', 'Keyd', 1);  
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('Keyd2', 'Keyd', 2);
+
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('RED1', 'RED', 1);
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('RED2', 'RED', 2);
+
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('FLA1', 'FLA', 1);
+INSERT INTO equipe (id, time, id_campeonato) VALUES ('FLA2', 'FLA', 2); 
+ 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA JOGADOR EQUIPE */
 
--- INSERIR AQUI
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN1', 'Yang');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN1', 'MINERVA');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN2', 'TIGER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('paiN2', 'Yang');
 
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB1', 'FREIRE');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB1', 'CROKK');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB2', 'ASLAN');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB2', 'FREIRE');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('CNB2', 'CROKK');
+
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('INTZ2', 'TAY');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('INTZ2', 'RAZ');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('INTZ2', 'SLAYER');
+
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM1', 'WIZER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM2', 'OWSLA');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM2', 'YURIK');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('KBM2', 'WIZER');
+
+
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd1', 'LEP');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd1', 'NAWKIN');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd2', 'DRDOOM');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd2', 'LEP');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('Keyd2', 'NAWKIN');
+
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('RED1', 'LOOP');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('RED1', 'SPEEDY');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('RED1', 'KRAZY');
+
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA1', 'ROBO');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA1', 'NINJAX');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA1', 'SALAMASTER');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA2', 'ROBO');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA2', 'NINJAX');
+INSERT INTO JOGADOR_EQUIPE (id_equipe, gamertag) VALUES ('FLA2', 'SALAMASTER');
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 /* DADOS PARA TABELA PATROCINIO EQUIPE */

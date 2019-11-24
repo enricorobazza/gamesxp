@@ -89,7 +89,7 @@ CREATE TABLE premiacao(
 );
 
 CREATE TABLE equipe(
-    id SERIAL,
+    id VARCHAR(10),
     time VARCHAR(5),
     id_campeonato INT,
     PRIMARY KEY(id),
@@ -104,6 +104,8 @@ CREATE TABLE jogador_equipe(
     id_equipe INT,
     gamertag VARCHAR(50),
     PRIMARY KEY(id_equipe, gamertag)
+    FOREIGN KEY(id_equipe) REFERENCES equipe(id)
+    FOREIGN KEY(gamertag) REFERENCES jogador(gamertag)
 );
 
 CREATE TABLE patrocinio_equipe(

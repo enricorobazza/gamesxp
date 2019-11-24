@@ -29,3 +29,5 @@ while True:
             print(pessoa.nome)
         else:
             print("Não encontrado!!")
+    elif(op == 6):
+        conn.testReturn()

@@ -33,6 +33,9 @@ class Campeonato(Frame):
         self.vencedor = Label(self.frameBottom, text="Atual Vencedor: ")
         self.vencedor.pack(anchor="w")
 
+        self.vencedorWeights = Label(self.frameBottom, text="Atual Vencedor baseado em pesos: ")
+        self.vencedorWeights.pack(anchor="w")
+
         self.qtdEquipes = Label(self.frameBottom, text="Qtd equipes participantes: ")
         self.qtdEquipes.pack(anchor="w")
 
@@ -63,6 +66,10 @@ class Campeonato(Frame):
         vencedor = self.campeonatoDao.getVencedor(id)
         if(vencedor is not None):
             self.vencedor["text"] = "Atual Vencedor " + vencedor[1] + ", partidas ganhas: " + str(vencedor[2])
+
+        vencedorWithWeights = self.campeonatoDao.getVencedorBasedOnWeight(id, [3,2,1])
+        if(vencedorWithWeights is not None):
+            self.vencedorWeights["text"] = "Atual Vencedor baseado em pesos " + vencedorWithWeights[1] + ", pontuação: "+str(vencedorWithWeights[3])
 
         qtdEquipes = self.campeonatoDao.getQtdEquipes(id)
         self.qtdEquipes["text"] = "Qtd equipes participantes: " + str(qtdEquipes)

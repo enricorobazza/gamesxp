@@ -31,6 +31,11 @@ class CampeonatoDAO:
 
         return self.conn.fetchone()
 
+    def getVencedorBasedOnWeight(self, id, weights=[3,2,1]):
+        self.conn.execute("SELECT ej.id_equipe, e.time, p.id_campeonato, SUM(CASE WHEN ej.colocacao = 1 THEN %s ELSE CASE WHEN ej.colocacao = 2 THEN %s ELSE CASE WHEN ej.colocacao = 3 THEN %s ELSE 0 END END END) as pontuacao FROM equipe_joga ej INNER JOIN partida p ON(p.id = ej.id_partida) INNER JOIN equipe e ON(e.id = ej.id_equipe) WHERE p.id_campeonato = %s GROUP BY(p.id_campeonato, ej.id_equipe, e.time) ORDER BY(pontuacao) DESC"%(weights[0], weights[1], weights[2], id))
+
+        return self.conn.fetchone()
+
     def getQtdEquipes(self, id):
         self.conn.execute("SELECT count(*) from equipe where id_campeonato = "+str(id)+" group by(id_campeonato)")
         return self.conn.fetchone()[0]

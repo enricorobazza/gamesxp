@@ -2,6 +2,9 @@ from tkinter import *
 from tkinter import ttk
 from connect import Connection
 from dao.equipe import EquipeDAO
+from dao.partida import PartidaDAO
+from model.partida import Partida
+from model.equipe import Equipe
 
 class AddPartida(Frame):
 
@@ -11,6 +14,7 @@ class AddPartida(Frame):
         conn = Connection()
 
         self.equipeDao = EquipeDAO(conn)
+        self.partidaDao = PartidaDAO(conn)
 
         frameTitle = Frame(self)
         frameTitle.pack(side=TOP, fill=X, padx=20, pady=5)
@@ -39,11 +43,14 @@ class AddPartida(Frame):
         frameAddEquipe = Frame(mainFrame)
         frameAddEquipe.pack(anchor="w", pady=10)
 
-        self.cbEquipes = ttk.Combobox(frameAddEquipe, value=["a","b","c"])
+        self.cbEquipes = ttk.Combobox(frameAddEquipe)
         self.cbEquipes.pack(anchor="w", side=LEFT)
+
         Label(frameAddEquipe, text="Colocação: ").pack(anchor="w", side=LEFT)
-        self.txtColocacao = Entry(frameAddEquipe)
-        self.txtColocacao.pack(anchor="w", side=LEFT)
+
+        self.cbColocacao = ttk.Combobox(frameAddEquipe)
+        self.cbColocacao.pack(anchor="w", side=LEFT)
+
         Button(frameAddEquipe, text="Adicionar Equipe", command = self.addEquipe).pack(anchor="w", side=LEFT)
 
         self.frameEquipes = Frame(mainFrame)
@@ -57,19 +64,35 @@ class AddPartida(Frame):
         frameBottom = Frame(self)
         frameBottom.pack(side=TOP, fill=X, padx=20, pady=5)
 
-        Button(frameBottom, text="Adicionar partida").pack()
+        Button(frameBottom, text="Criar partida", command=self.criarPartida).pack()
+
+    def criarPartida(self):
+        partida = Partida(self.txtData.get(), self.txtLocal.get(), self.id_campeonato)
+        partida.setEquipes(self.equipes)
+        self.partidaDao.insert(partida)
+        self.controller.get_frame("Campeonato").setIdCampeonato(self.id_campeonato)
+        self.controller.show_frame("Campeonato")
         
     def addEquipe(self):
         equipe = self.cbEquipes.get()
+        colocacao = self.cbColocacao.get()
+
         self.cbEquipes.set('')
         self.cbEquipesOptions.remove(equipe)
         self.cbEquipes["value"] = self.cbEquipesOptions
 
-        lblEquipe = Label(self.frameEquipes, text=equipe)
+        self.cbColocacao.set('')
+        self.cbColocacaoOptions.remove(colocacao)
+        self.cbColocacao["value"] = self.cbColocacaoOptions
+
+        lblEquipe = Label(self.frameEquipes, text="%s(%sº lugar)"%(equipe, colocacao))
         lblEquipe.pack(anchor="w")
 
+        equipe_obj = Equipe(equipe, self.id_campeonato)
+        equipe_obj.setColocacao(colocacao)
+
         self.lblEquipes.append(lblEquipe)
-        self.equipes.append(equipe)
+        self.equipes.append(equipe_obj)
 
     def resetScreen(self):
         for label in self.lblEquipes:
@@ -77,11 +100,19 @@ class AddPartida(Frame):
         self.lblEquipes = []
         self.equipes = []
         self.cbEquipes.set('')
+        self.txtData.delete(0, 'end')
+        self.txtLocal.delete(0, 'end')
 
     def setIdCampeonato(self, id):
         self.id_campeonato = id
         equipes = self.equipeDao.getAllFromCampeonato(id)
         self.cbEquipesOptions = []
+        self.cbColocacaoOptions = []
+        i = 1
         for equipe in equipes:
             self.cbEquipesOptions.append(equipe[0])
+            self.cbColocacaoOptions.append(str(i))
+            i+=1
+
         self.cbEquipes["value"] = self.cbEquipesOptions
+        self.cbColocacao["value"] = self.cbColocacaoOptions

@@ -13,7 +13,10 @@ class Connection:
         print("Connection finished")
 
     def execute(self, command):
-        self.cursor.execute(command)
+        try:
+            self.cursor.execute(command)
+        except psycopg2.Error as e:
+            print(e.pgerror)
         self.connection.commit()
 
     def insertID(self, command):

@@ -51,6 +51,8 @@ class AddEquipe(Frame):
         Button(bottomFrame, text="Criar Equipe", command = self.criarEquipe).pack(pady=5)
 
     def criarEquipe(self):
+        if(len(self.jogadores) == 0):
+            return
         equipe = Equipe(self.time, self.id_campeonato)
         equipe.setJogadores(self.jogadores)
         self.equipeDao.insert(equipe)

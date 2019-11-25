@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import ttk
+import datetime
+
 from connect import Connection
 from dao.equipe import EquipeDAO
 from dao.partida import PartidaDAO
@@ -66,7 +68,33 @@ class AddPartida(Frame):
 
         Button(frameBottom, text="Criar partida", command=self.criarPartida).pack()
 
+        self.lblErro = Label(frameBottom, text="", fg="red")
+
+    def validate_date(self, date):
+        try:
+            datetime.datetime.strptime(date, '%d/%m/%Y %H:%M')
+            return 1
+        except ValueError:
+            return 0
+
     def criarPartida(self):
+        if(len(self.equipes) == 0):
+            self.lblErro["text"] = "Adicione pelo menos uma equipe"
+            self.lblErro.pack()
+            return
+        elif(self.txtData.get() == ""):
+            self.lblErro["text"] = "Adicione uma Data"
+            self.lblErro.pack()
+            return
+        elif(self.txtLocal.get() == ""):
+            self.lblErro["text"] = "Adicione um Local"
+            self.lblErro.pack()
+            return  
+        elif(not self.validate_date(self.txtData.get())):
+            self.lblErro["text"] = "Adicione uma data no formato: DD/MM/YYYY HH:mm"
+            self.lblErro.pack()
+            return
+
         partida = Partida(self.txtData.get(), self.txtLocal.get(), self.id_campeonato)
         partida.setEquipes(self.equipes)
         self.partidaDao.insert(partida)
@@ -102,6 +130,7 @@ class AddPartida(Frame):
         self.cbEquipes.set('')
         self.txtData.delete(0, 'end')
         self.txtLocal.delete(0, 'end')
+        self.lblErro.pack_forget()
 
     def setIdCampeonato(self, id):
         self.id_campeonato = id

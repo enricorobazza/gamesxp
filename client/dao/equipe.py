@@ -14,7 +14,9 @@ class EquipeDAO:
 
         return equipe
 
-
     def getAllFromCampeonato(self, id_campeonato):
         self.conn.execute("SELECT time FROM equipe WHERE id_campeonato = "+str(id_campeonato))
         return self.conn.fetchall()
+
+    def getEquipeComMaisPartidas(self):
+        self.conn.execute("select e.time, count(*) from equipe_joga ej inner join partida p on(p.id= ej.id_partida) inner join equipe e on(e.id = ej.id_equipe) group by(e.time) order by(count(*)) DESC;")

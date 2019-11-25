@@ -38,3 +38,7 @@ class CampeonatoDAO:
     def getQtdMaxEquipes(self, id):
         self.conn.execute("SELECT tc.qtd_equipes from campeonato c INNER JOIN tipo_campeonato tc ON(tc.nome = c.tipo_campeonato)WHERE c.id = "+str(id))
         return self.conn.fetchone()[0]
+
+    def getTamEquipes(self, id):
+        self.conn.execute("SELECT tc.tamanho_equipes from campeonato c INNER JOIN tipo_campeonato tc ON(tc.nome = c.tipo_campeonato)WHERE c.id = "+str(id))
+        return self.conn.fetchone()[0]

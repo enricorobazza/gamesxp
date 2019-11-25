@@ -3,3 +3,6 @@ class Equipe:
         self.time = time
         self.id_campeonato = id_campeonato
         self.id = id
+
+    def setJogadores(self, jogadores):
+        self.jogadores = jogadores

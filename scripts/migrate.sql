@@ -76,7 +76,7 @@ CREATE TABLE campeonato(
     dt_termino TIMESTAMP,
     PRIMARY KEY(id),
     UNIQUE(jogo, tipo_campeonato, dt_inicio),
-    FOREIGN KEY(jogo, tipo_campeonato) REFERENCES tipo_campeonato(jogo, nome),
+    FOREIGN KEY(jogo, tipo_campeonato) REFERENCES tipo_campeonato(jogo, nome) ON DELETE CASCADE,
     CHECK(dt_termino > dt_inicio)
 );
 
@@ -94,8 +94,8 @@ CREATE TABLE equipe(
     id_campeonato INT,
     PRIMARY KEY(id),
     UNIQUE(time, id_campeonato),
-    FOREIGN KEY(time) REFERENCES time(sigla),
-    FOREIGN KEY(id_campeonato) REFERENCES campeonato(id)
+    FOREIGN KEY(time) REFERENCES time(sigla) ON DELETE CASCADE,
+    FOREIGN KEY(id_campeonato) REFERENCES campeonato(id) ON DELETE CASCADE
 );
 
 -- Verificar em aplicação se pertence ao time da equipe
@@ -104,8 +104,8 @@ CREATE TABLE jogador_equipe(
     id_equipe INT,
     gamertag VARCHAR(50),
     PRIMARY KEY(id_equipe, gamertag),
-    FOREIGN KEY(id_equipe) REFERENCES equipe(id),
-    FOREIGN KEY(gamertag) REFERENCES jogador(gamertag)
+    FOREIGN KEY(id_equipe) REFERENCES equipe(id) ON DELETE CASCADE,
+    FOREIGN KEY(gamertag) REFERENCES jogador(gamertag) ON DELETE CASCADE
 );
 
 CREATE TABLE patrocinio_equipe(
@@ -113,7 +113,7 @@ CREATE TABLE patrocinio_equipe(
     id_equipe INT,
     quantia FLOAT,
     PRIMARY KEY(patrocinador, id_equipe),
-    FOREIGN KEY(id_equipe) REFERENCES equipe(id),
+    FOREIGN KEY(id_equipe) REFERENCES equipe(id) ON DELETE CASCADE,
     CHECK(quantia >= 0)
 );
 
@@ -124,7 +124,7 @@ CREATE TABLE partida(
     id_campeonato INT,
     PRIMARY KEY(id),
     UNIQUE(data, local),
-    FOREIGN KEY(id_campeonato) REFERENCES campeonato(id)
+    FOREIGN KEY(id_campeonato) REFERENCES campeonato(id) ON DELETE CASCADE
 );
 
 CREATE TABLE equipe_joga(
@@ -133,8 +133,8 @@ CREATE TABLE equipe_joga(
     colocacao INT,
     PRIMARY KEY(id_equipe, id_partida),
     UNIQUE(id_partida, colocacao),
-    FOREIGN KEY(id_equipe) REFERENCES equipe(id),
-    FOREIGN KEY(id_partida) REFERENCES partida(id)
+    FOREIGN KEY(id_equipe) REFERENCES equipe(id) ON DELETE CASCADE,
+    FOREIGN KEY(id_partida) REFERENCES partida(id) ON DELETE CASCADE
 );
 
 -- Olhar observação da professora
@@ -142,8 +142,8 @@ CREATE TABLE juiz_arbitra(
     id_partida INT,
     juiz VARCHAR(11),
     PRIMARY KEY(id_partida, juiz),
-    FOREIGN KEY(id_partida) REFERENCES partida(id),
-    FOREIGN KEY(juiz) REFERENCES pessoa(cpf)
+    FOREIGN KEY(id_partida) REFERENCES partida(id) ON DELETE CASCADE,
+    FOREIGN KEY(juiz) REFERENCES pessoa(cpf) ON DELETE CASCADE
 );
 
 CREATE TABLE assistir(
@@ -152,7 +152,7 @@ CREATE TABLE assistir(
     id_partida INT,
     PRIMARY KEY(id),
     UNIQUE(email, id_partida),
-    FOREIGN KEY(id_partida) REFERENCES partida(id)
+    FOREIGN KEY(id_partida) REFERENCES partida(id) ON DELETE CASCADE
 );
 
 CREATE TABLE comentario(
@@ -160,5 +160,5 @@ CREATE TABLE comentario(
     horario TIMESTAMP,
     texto TEXT,
     PRIMARY KEY(id_assistir, horario),
-    FOREIGN KEY(id_assistir) REFERENCES assistir(id)
+    FOREIGN KEY(id_assistir) REFERENCES assistir(id) ON DELETE CASCADE
 );

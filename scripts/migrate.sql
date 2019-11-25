@@ -42,7 +42,7 @@ CREATE TABLE jogador(
     FOREIGN KEY(time)   REFERENCES time(sigla) ON DELETE CASCADE
 );
 
-CREATE TABLE patrocinador(
+CREATE TABLE patrocinador_jogador(
     patrocinador VARCHAR(50),
     jogador VARCHAR(50),
     quantia FLOAT,

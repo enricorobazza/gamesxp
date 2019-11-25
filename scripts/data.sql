@@ -153,11 +153,11 @@ INSERT INTO JOGADOR (gamertag, time, cpf)
 
 /* DADOS PARA TABELA PATROCINADOR */
 
-INSERT INTO patrocinador (patrocinador, jogador, quantia)
+INSERT INTO patrocinador_jogador (patrocinador, jogador, quantia)
 	VALUES ('Nestle', 'Yang', 10165);
-INSERT INTO patrocinador (patrocinador, jogador, quantia)
+INSERT INTO patrocinador_jogador (patrocinador, jogador, quantia)
 	VALUES ('Google', 'ROBO', 15165);
-INSERT INTO patrocinador (patrocinador, jogador, quantia)
+INSERT INTO patrocinador_jogador (patrocinador, jogador, quantia)
 	VALUES ('Kabum', 'WIZER', 1165);
 	
 

@@ -39,12 +39,18 @@ class Campeonato(Frame):
         self.btnAddEquipe = Button(self.frameBottom, text="Adicionar Equipe", command = self.addEquipe )
         self.btnAddEquipe.pack(pady=10)
 
-        Button(self.frameBottom, text="Adicionar Partida", command = lambda: controller.show_frame("AddPartida")).pack(pady=5)
+        Button(self.frameBottom, text="Adicionar Partida", command = self.addPartida).pack(pady=5)
+
+    def addPartida(self):
+        addPartida = self.controller.get_frame("AddPartida")
+        addPartida.resetScreen()
+        addPartida.setIdCampeonato(self.id_campeonato)
+        self.controller.show_frame("AddPartida")
 
     def addEquipe(self):
         addEquipe = self.controller.get_frame("AddEquipe")
-        addEquipe.setIdCampeonato(self.id_campeonato)
         addEquipe.resetScreen()
+        addEquipe.setIdCampeonato(self.id_campeonato)
         self.controller.show_frame("AddEquipe")
 
 

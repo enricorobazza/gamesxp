@@ -15,3 +15,6 @@ class EquipeDAO:
         return equipe
 
 
+    def getAllFromCampeonato(self, id_campeonato):
+        self.conn.execute("SELECT time FROM equipe WHERE id_campeonato = "+str(id_campeonato))
+        return self.conn.fetchall()

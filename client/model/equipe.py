@@ -6,3 +6,6 @@ class Equipe:
 
     def setJogadores(self, jogadores):
         self.jogadores = jogadores
+
+    def setColocacao(self, colocacao):
+        self.colocacao = colocacao

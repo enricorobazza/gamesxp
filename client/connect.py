@@ -24,6 +24,9 @@ class Connection:
     def fetchone(self):
         return self.cursor.fetchone()
 
+    def fetchall(self):
+        return self.cursor.fetchall()
+
     def listAllPlayers(self):
         self.cursor.execute("SELECT * from pessoa;")
         for pessoa in self.cursor.fetchall():

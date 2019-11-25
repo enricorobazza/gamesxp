@@ -1,6 +1,7 @@
 from connect import Connection
 from dao.pessoa import PessoaDAO
 from model.pessoa import Pessoa
+from dao.campeonato import CampeonatoDAO
 
 def insertTime():
     print("Time")
@@ -8,16 +9,17 @@ def insertTime():
 
 conn = Connection()
 pessoaDao = PessoaDAO(conn)
+campeonatoDao = CampeonatoDAO(conn)
 
 while True:
     op = int(input("Digite sua opcao: "))
-    if(op == 4):
+    if(op == 1):
         break
     elif(op == 3): 
         insertTime()
     elif(op == 2):
         conn.listAllPlayers()
-    elif(op == 1):
+    elif(op == 4):
         enrico = Pessoa("47043508860","Enrico Robazza", "453409192","981947929","Meu endereco", "1997-03-31")
         pessoaDao.delete(enrico.cpf)
         pessoaDao.insert(enrico)
@@ -31,3 +33,5 @@ while True:
             print("Não encontrado!!")
     elif(op == 6):
         conn.testReturn()
+    elif(op == 7):
+        campeonatoDao.listAll()

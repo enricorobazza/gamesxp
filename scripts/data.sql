@@ -151,7 +151,7 @@ INSERT INTO JOGADOR (gamertag, time, cpf)
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------
 
-/* DADOS PARA TABELA PATROCINADOR */
+/* DADOS PARA TABELA PATROCINADOR JOGADOR */
 
 INSERT INTO patrocinador_jogador (patrocinador, jogador, quantia)
 	VALUES ('Nestle', 'Yang', 10165);

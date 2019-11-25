@@ -31,10 +31,12 @@ class CampeonatoDAO:
 
         return self.conn.fetchone()
 
-    # SELECT MAX(qtd_vitorias), id_campeonato FROM (SELECT ej.id_equipe, p.id_campeonato, count(*) as qtd_vitorias FROM equipe_joga ej INNER JOIN partida p ON(p.id = ej.id_partida) WHERE ej.colocacao = 1 GROUP BY(ej.id_equipe,p.id_campeonato) ORDER BY(count(*)) DESC) as campeonatos GROUP BY(id_campeonato);
 
-    def getMostWinner(self, id):
-        self.conn.execute("SELECT id_campeonato, max(qtd_vitorias) FROM (SELECT je.gamertag, e.id_campeonato, ej.colocacao, COUNT(*) as qtd_vitorias from equipe_joga ej INNER JOIN jogador_equipe je ON(ej.id_equipe = je.id_equipe) INNER JOIN equipe e ON(e.id = ej.id_equipe) WHERE ej.colocacao = 1 GROUP BY(je.gamertag, e.id_campeonato, ej.colocacao) ORDER BY(COUNT(*)) DESC) as vitoriosos GROUP BY(id_campeonato);")
+    def getMaiorJogadorVencedor(self, id):
+        self.conn.execute("with vitoriosos as(SELECT ej.id_equipe, p.id_campeonato, count(*) as qtd_vitorias FROM equipe_joga ej INNER JOIN partida p ON(p.id = ej.id_partida) WHERE ej.colocacao = 1 GROUP BY(ej.id_equipe,p.id_campeonato)), max_vitoriosos as(select id_campeonato, max(qtd_vitorias) as max_vitorias from vitoriosos group by(id_campeonato)), vencedores_campeonatos as (select v.id_equipe, v.id_campeonato, v.qtd_vitorias from vitoriosos v inner join max_vitoriosos mv ON(v.id_campeonato = mv.id_campeonato and v.qtd_vitorias = mv.max_vitorias) order by(v.id_campeonato))select je.gamertag, count(*) from vencedores_campeonatos vc inner join jogador_equipe je on(je.id_equipe = vc.id_equipe)group by(je.gamertag) order by(count(*)) DESC;")
+
+        return self.conn.fetchone()
+
 
     def getVencedorBasedOnWeight(self, id, weights=[3,2,1]):
         self.conn.execute("SELECT ej.id_equipe, e.time, p.id_campeonato, SUM(CASE WHEN ej.colocacao = 1 THEN %s ELSE CASE WHEN ej.colocacao = 2 THEN %s ELSE CASE WHEN ej.colocacao = 3 THEN %s ELSE 0 END END END) as pontuacao FROM equipe_joga ej INNER JOIN partida p ON(p.id = ej.id_partida) INNER JOIN equipe e ON(e.id = ej.id_equipe) WHERE p.id_campeonato = %s GROUP BY(p.id_campeonato, ej.id_equipe, e.time) ORDER BY(pontuacao) DESC"%(weights[0], weights[1], weights[2], id))

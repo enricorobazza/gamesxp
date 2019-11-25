@@ -11,6 +11,8 @@ class AddPartida(Frame):
         frameTitle = Frame(self)
         frameTitle.pack(side=TOP, fill=X, padx=20, pady=5)
 
+        Button(frameTitle, text="← Voltar", command=lambda: controller.show_frame("Campeonato")).pack(anchor="w")
+
         Label(frameTitle, text="Adicionar Partida").pack()
 
         frameGrid = Frame(self)

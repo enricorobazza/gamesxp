@@ -2,6 +2,7 @@ from tkinter import *
 from list_campeonatos_gui import ListCampeonatos
 from addPartida_gui import AddPartida
 from campeonato_gui import Campeonato
+from addEquipe_gui import AddEquipe
 
 class Application(Tk):
 
@@ -19,6 +20,7 @@ class Application(Tk):
         allFrames = [
             {"id":"ListCampeonatos", "frame":ListCampeonatos}, 
             {"id":"Campeonato", "frame":Campeonato},
+            {"id":"AddEquipe", "frame":AddEquipe},
             {"id":"AddPartida", "frame":AddPartida}
         ]
 

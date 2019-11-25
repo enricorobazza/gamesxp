@@ -34,3 +34,7 @@ class CampeonatoDAO:
     def getQtdEquipes(self, id):
         self.conn.execute("SELECT count(*) from equipe where id_campeonato = "+str(id)+" group by(id_campeonato)")
         return self.conn.fetchone()[0]
+
+    def getQtdMaxEquipes(self, id):
+        self.conn.execute("SELECT tc.qtd_equipes from campeonato c INNER JOIN tipo_campeonato tc ON(tc.nome = c.tipo_campeonato)WHERE c.id = "+str(id))
+        return self.conn.fetchone()[0]

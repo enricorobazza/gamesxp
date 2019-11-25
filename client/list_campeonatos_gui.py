@@ -23,7 +23,7 @@ class ListCampeonatos(Frame):
         frameGrid = Frame(self)
         frameGrid.pack(side=TOP, fill=X, padx=20, pady=10)
 
-        title = Label(frameTitle,text="Campeonatos").pack()
+        title = Label(frameTitle,text="Campeonatos", font=('Helvetica', 16, 'bold')).pack()
         self.campeonatos = []
         h = 2
         for campeonato in campeonatos:

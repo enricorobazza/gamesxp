@@ -13,7 +13,7 @@ class AddPartida(Frame):
 
         Button(frameTitle, text="← Voltar", command=lambda: controller.show_frame("Campeonato")).pack(anchor="w")
 
-        Label(frameTitle, text="Adicionar Partida").pack()
+        Label(frameTitle, text="Adicionar Partida", font=('Helvetica', 16, 'bold')).pack()
 
         frameGrid = Frame(self)
         frameGrid.pack(side=TOP, fill=X, padx=20, pady=10)

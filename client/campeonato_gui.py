@@ -15,10 +15,10 @@ class Campeonato(Frame):
 
         Button(frameTitle, text="← Voltar", command=lambda: controller.show_frame("ListCampeonatos")).pack(anchor="w")
 
-        self.title = Label(frameTitle, text="Campeonato")
+        self.title = Label(frameTitle, text="Campeonato",  font=('Helvetica', 16, 'bold'))
         self.title.pack()
 
-        Label(frameTitle, text="Partidas:").pack(anchor="w")
+        Label(frameTitle, text="Partidas:",font=('Helvetica', 14, 'bold')).pack(anchor="w")
 
         self.frameGrid = Frame(self)
         self.frameGrid.pack(side=TOP, fill=X, padx=20, pady=5)
@@ -28,7 +28,7 @@ class Campeonato(Frame):
         self.frameBottom = Frame(self)
         self.frameBottom.pack(side=TOP, fill=X, padx=20, pady=10)
 
-        Label(self.frameBottom, text="Informações").pack()
+        Label(self.frameBottom, text="Informações",font=('Helvetica', 14, 'bold')).pack()
 
         self.vencedor = Label(self.frameBottom, text="Atual Vencedor: ")
         self.vencedor.pack(anchor="w")
@@ -36,8 +36,14 @@ class Campeonato(Frame):
         self.qtdEquipes = Label(self.frameBottom, text="Qtd equipes participantes: ")
         self.qtdEquipes.pack(anchor="w")
 
-        Button(self.frameBottom, text="Adicionar Equipe", command = lambda: controller.show_frame("AddEquipe")).pack(pady=10)
+        self.btnAddEquipe = Button(self.frameBottom, text="Adicionar Equipe", command = self.addEquipe )
+        self.btnAddEquipe.pack(pady=10)
+
         Button(self.frameBottom, text="Adicionar Partida", command = lambda: controller.show_frame("AddPartida")).pack(pady=5)
+
+    def addEquipe(self):
+        self.controller.get_frame("AddEquipe").resetScreen()
+        self.controller.show_frame("AddEquipe")
 
 
     def setIdCampeonato(self, id):
@@ -52,6 +58,10 @@ class Campeonato(Frame):
 
         qtdEquipes = self.campeonatoDao.getQtdEquipes(id)
         self.qtdEquipes["text"] = "Qtd equipes participantes: " + str(qtdEquipes)
+
+        qtdMaxEquipes = self.campeonatoDao.getQtdMaxEquipes(id)
+        if(qtdEquipes >= qtdMaxEquipes):
+            self.btnAddEquipe.destroy()
 
     def loadPartidas(self):
         for partida in self.partidas:

@@ -18,12 +18,6 @@ class TimeDAO:
         self.conn.execute("select gamertag from jogador where gamertag not in(select je.gamertag from jogador_equipe je inner join equipe e on(e.id = je.id_equipe) where e.id_campeonato = "+str(id_campeonato)+") and time = '"+sigla+"'")
         return self.conn.fetchall()
 
-# select * from time where sigla not in(select time from equipe where id_campeonato = 1);
-
-
-# select gamertag from jogador where time = 'paiN' and gamertag not in(select gamertag from jogador_equipe);
-
-# select gamertag from jogador where gamertag not in(select je.gamertag from jogador_equipe je inner join equipe e on(e.id = je.id_equipe) where e.id_campeonato = 1);
-
-
-# select je.gamertag, e.id_campeonato from jogador_equipe je inner join equipe e on(e.id = je.id_equipe);
+    def getTimeComMaisPartidas(self):
+        self.conn.execute("select e.time, count(*) from equipe_joga ej inner join partida p on(p.id= ej.id_partida) inner join equipe e on(e.id = ej.id_equipe) group by(e.time) order by(count(*)) DESC;")
+        return self.conn.fetchone()

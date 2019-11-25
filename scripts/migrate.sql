@@ -122,9 +122,11 @@ CREATE TABLE partida(
     data TIMESTAMP,
     local VARCHAR(100),
     id_campeonato INT,
+    juiz VARCHAR(11),
     PRIMARY KEY(id),
     UNIQUE(data, local),
-    FOREIGN KEY(id_campeonato) REFERENCES campeonato(id) ON DELETE CASCADE
+    FOREIGN KEY(id_campeonato) REFERENCES campeonato(id) ON DELETE CASCADE,
+    FOREIGN KEY(juiz) REFERENCES pessoa(cpf) ON DELETE SET NULL
 );
 
 CREATE TABLE equipe_joga(
@@ -135,15 +137,6 @@ CREATE TABLE equipe_joga(
     UNIQUE(id_partida, colocacao),
     FOREIGN KEY(id_equipe) REFERENCES equipe(id) ON DELETE CASCADE,
     FOREIGN KEY(id_partida) REFERENCES partida(id) ON DELETE CASCADE
-);
-
--- Olhar observação da professora
-CREATE TABLE juiz_arbitra(
-    id_partida INT,
-    juiz VARCHAR(11),
-    PRIMARY KEY(id_partida, juiz),
-    FOREIGN KEY(id_partida) REFERENCES partida(id) ON DELETE CASCADE,
-    FOREIGN KEY(juiz) REFERENCES pessoa(cpf) ON DELETE CASCADE
 );
 
 CREATE TABLE assistir(

@@ -8,16 +8,6 @@ class PartidaDAO:
         self.conn.execute("SELECT ej.id_equipe, e.time FROM equipe_joga ej INNER JOIN equipe e ON(e.id = ej.id_equipe) WHERE ej.id_partida = "+str(id))
         return self.conn.fetchall()
 
-    def insert(self, equipe):
-        id = self.conn.insertID("INSERT INTO equipe(time, id_campeonato) VALUES('%s', %s) RETURNING id" 
-        % (equipe.time, equipe.id_campeonato))
-        equipe.id = id
-
-        for jogador in equipe.jogadores:
-            self.conn.execute("INSERT INTO jogador_equipe(id_equipe, gamertag) VALUES("+str(id)+",'"+jogador+"')")
-
-        return equipe
-
     def insert(self, partida):
         id = self.conn.insertID("INSERT INTO partida(data, local, id_campeonato) VALUES(TO_TIMESTAMP('%s', 'DD/MM/YYYY HH24:MI'), '%s', %s) RETURNING id" 
         % (partida.data, partida.local ,partida.id_campeonato))
